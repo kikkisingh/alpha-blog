@@ -1,3 +1,10 @@
+
 <h1>Showing articles details</h1>
 <p><strong>Title: </strong><%= @article.title%></p>
 <p><strong>Description: </strong><%=  @article.description%></p>
+
+<div class="button-container">
+    <%= button_to 'edit', edit_article_path(@article), method: :get %> 
+    <%= button_to 'delete', article_path(@article), :method => :delete, onclick: "return confirm('Are you sure?')" %> 
+    <%= button_to 'return to articles listing', articles_path, method: :get %>
+</div>
